@@ -176,8 +176,9 @@ class Carrier extends AbstractCarrier implements CarrierInterface
         $rate->setMethodDescription($description);
         $rate->setCost($method->price);
         $rate->setPrice($method->price);
-
-        $rate->setCustomData($method->getCustomData());
+        
+        // return custom data as an array
+        $rate->setCustomData($method->getCustomData()->getData());
 
         return $rate;
     }
